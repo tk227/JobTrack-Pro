@@ -3,9 +3,8 @@
 A full-stack web application that helps job seekers manage their job applications, track interview schedules, monitor application progress, and analyze their job search activities through an interactive dashboard.
 
 ## 🚀 Live Demo
+https://jobtrack-pro-frontend.onrender.com
 
-- **Frontend:** https://jobtrack-pro-frontend.onrender.com
-- **Backend API:** https://jobtrack-pro-backend.onrender.com
 
 ## ✨ Features
 
