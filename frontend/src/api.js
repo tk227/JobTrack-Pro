@@ -1,7 +1,8 @@
 
 import axios from "axios";
 
-const API_BASE = "http://127.0.0.1:8000/api";
+// Production Django backend on Render
+const API_BASE = "https://jobtrack-pro-backend.onrender.com/api";
 
 const ACCESS_KEY = "jobtrack_access";
 const REFRESH_KEY = "jobtrack_refresh";
@@ -13,7 +14,7 @@ const api = axios.create({
   },
 });
 
-// Attach the access token to every API request.
+// Attach access token to every API request.
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem(ACCESS_KEY);
 
@@ -24,7 +25,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Shared refresh request prevents multiple simultaneous refresh calls.
+// Shared refresh request.
 let refreshPromise = null;
 
 // Automatically refresh expired access tokens.
@@ -38,7 +39,6 @@ api.interceptors.response.use(
       return Promise.reject(error);
     }
 
-    // Don't retry authentication endpoints.
     const isAuthRequest =
       originalRequest.url?.includes("/accounts/token/") ||
       originalRequest.url?.includes("/accounts/register/");
