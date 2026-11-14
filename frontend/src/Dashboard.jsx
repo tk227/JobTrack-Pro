@@ -1960,10 +1960,11 @@ function Dashboard({ onLogout }) {
       </main>
 
       {/* Modals */}
-      {jobModalOpen && <JobFormModal />}
-      {interviewModalOpen && <InterviewFormModal />}
+      {jobModalOpen && JobFormModal()}
+      {interviewModalOpen && InterviewFormModal()}
     </div>
   );
 }
+
 
 export default Dashboard;
